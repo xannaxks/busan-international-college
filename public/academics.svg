@@ -1,0 +1,69 @@
+<svg
+        width="220"
+        height="200"
+        viewBox="0 0 220 200"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+>
+    <!-- Graduation Cap Top -->
+    <polygon
+            points="110 20 20 60 110 100 200 60"
+            fill="#7a1025"
+    />
+
+    <!-- Cap Body -->
+    <polygon
+            points="55 80 55 115 165 115 165 80 110 100"
+            fill="#5a0b1b"
+    />
+
+    <!-- Tassel -->
+    <rect
+            x="188"
+            y="60"
+            width="6"
+            height="48"
+            rx="3"
+            fill="#c49a6c"
+    />
+    <circle
+            cx="191"
+            cy="112"
+            r="6"
+            fill="#c49a6c"
+    />
+
+    <!-- Diploma -->
+    <rect
+            x="30"
+            y="125"
+            width="140"
+            height="30"
+            rx="15"
+            fill="#7a1025"
+    />
+
+    <!-- Diploma roll -->
+    <circle
+            cx="170"
+            cy="140"
+            r="15"
+            fill="#5a0b1b"
+    />
+    <circle
+            cx="170"
+            cy="140"
+            r="7"
+            stroke="#c49a6c"
+            stroke-width="3"
+    />
+
+    <!-- Ribbon -->
+    <rect
+            x="85"
+            y="125"
+            width="16"
+            height="30"
+            fill="#c49a6c"
+    />
+</svg>

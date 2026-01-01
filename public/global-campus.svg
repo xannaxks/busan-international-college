@@ -1,0 +1,16 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Left building -->
+    <rect x="22" y="58" width="26" height="32" stroke="#7A0C24" stroke-width="3"/>
+    <rect x="30" y="66" width="10" height="10" stroke="#7A0C24" stroke-width="2"/>
+
+    <!-- Center building -->
+    <rect x="48" y="46" width="24" height="44" stroke="#7A0C24" stroke-width="3"/>
+    <rect x="56" y="62" width="8" height="28" stroke="#7A0C24" stroke-width="2"/>
+
+    <!-- Right building -->
+    <rect x="72" y="58" width="26" height="32" stroke="#7A0C24" stroke-width="3"/>
+    <rect x="80" y="66" width="10" height="10" stroke="#7A0C24" stroke-width="2"/>
+
+    <!-- Ground line -->
+    <line x1="16" y1="90" x2="104" y2="90" stroke="#7A0C24" stroke-width="2"/>
+</svg>

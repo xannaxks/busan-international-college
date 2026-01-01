@@ -1,0 +1,17 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Globe -->
+    <circle cx="60" cy="60" r="36" stroke="#7A0C24" stroke-width="3"/>
+    <ellipse cx="60" cy="60" rx="18" ry="36" stroke="#7A0C24" stroke-width="2"/>
+    <ellipse cx="60" cy="60" rx="36" ry="14" stroke="#7A0C24" stroke-width="2"/>
+
+    <!-- Location pin -->
+    <path d="M60 38
+           C52 38 46 44 46 52
+           C46 62 60 78 60 78
+           C60 78 74 62 74 52
+           C74 44 68 38 60 38Z"
+          stroke="#7A0C24"
+          stroke-width="3"
+          fill="none"/>
+    <circle cx="60" cy="52" r="4" fill="#7A0C24"/>
+</svg>
