@@ -1,19 +1,19 @@
 <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
     <!-- White background -->
-    <rect x="0" y="0" width="120" height="120" fill="#ffffff"/>
+    <rect x="0" y="0" width="120" height="120" fill="none"/>
 
     <!-- Left building -->
-    <rect x="22" y="58" width="26" height="32" fill="#ffffff" stroke="#7A0C24" stroke-width="3"/>
-    <rect x="30" y="66" width="10" height="10" fill="#ffffff" stroke="#7A0C24" stroke-width="2"/>
+    <rect x="22" y="58" width="26" height="32" fill="none" stroke="white" stroke-width="3"/>
+    <rect x="30" y="66" width="10" height="10" fill="none" stroke="white" stroke-width="2"/>
 
     <!-- Center building -->
-    <rect x="48" y="46" width="24" height="44" fill="#ffffff" stroke="#7A0C24" stroke-width="3"/>
-    <rect x="56" y="62" width="8" height="28" fill="#ffffff" stroke="#7A0C24" stroke-width="2"/>
+    <rect x="48" y="46" width="24" height="44" fill="none" stroke="white" stroke-width="3"/>
+    <rect x="56" y="62" width="8" height="28" fill="none" stroke="white" stroke-width="2"/>
 
     <!-- Right building -->
-    <rect x="72" y="58" width="26" height="32" fill="#ffffff" stroke="#7A0C24" stroke-width="3"/>
-    <rect x="80" y="66" width="10" height="10" fill="#ffffff" stroke="#7A0C24" stroke-width="2"/>
+    <rect x="72" y="58" width="26" height="32" fill="none" stroke="white" stroke-width="3"/>
+    <rect x="80" y="66" width="10" height="10" fill="none" stroke="white" stroke-width="2"/>
 
     <!-- Ground line -->
-    <line x1="16" y1="90" x2="104" y2="90" stroke="#7A0C24" stroke-width="2"/>
+    <line x1="16" y1="90" x2="104" y2="90" stroke="white" stroke-width="2"/>
 </svg>

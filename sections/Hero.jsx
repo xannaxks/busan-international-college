@@ -5,7 +5,7 @@ import styles from '../styles';
 import { slideIn, staggerContainer, textVariant } from '../utils/motion';
 
 const Hero = () => (
-  <section className={`${styles.yPaddings} sm:pl-16 pl-6`}>
+  <section className={`${styles.yPaddings} sm:pl-16 pl-6 `}>
     <motion.div
       variants={staggerContainer}
       initial="hidden"
@@ -45,7 +45,7 @@ const Hero = () => (
         <a href="#explore">
           <div className="w-full flex justify-end sm:-mt-[70px] -mt-[50px] pr-[40px] relative z-10 2xl:-ml-[100px]">
             <motion.img
-              src="/spinner.svg"
+              src="/spinner-white.svg"
               alt="stamp"
               className="sm:w-[155px] w-[100px] sm:h-[155px] h-[100px] object-contain "
               animate={{ rotate: 360 }}

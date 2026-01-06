@@ -1,27 +1,27 @@
 export const exploreWorlds = [
   {
     id: 'program-1',
-    imgUrl: '/global-business.svg',
+    imgUrl: '/global-business-white.svg',
     title: 'BA in Global Business',
   },
   {
     id: 'program-2',
-    imgUrl: '/ai-and-computer-engineering.svg',
+    imgUrl: '/ai-and-computer-engineering-white.svg',
     title: 'BS in Computer Engineering',
   },
   {
     id: 'program-3',
-    imgUrl: '/information-system-and-security.svg',
+    imgUrl: '/information-system-and-security-white.svg',
     title: 'BS in Information Systems',
   },
   {
     id: 'program-4',
-    imgUrl: '/engineering.svg',
+    imgUrl: '/engineering-white.svg',
     title: 'BS in Engineering',
   },
   {
     id: 'program-5',
-    imgUrl: '/global-korean-studies.svg',
+    imgUrl: '/global-korean-studies-white.svg',
     title: 'BA in Global Korean Studies',
   },
 ];
@@ -99,17 +99,17 @@ export const insights = [
 export const socials = [
   {
     name: 'twitter',
-    url: '/twitter.svg',
+    url: '/twitter-white.svg',
     link: 'https://twitter.com/VigneshGupta9',
   },
   {
     name: 'linkedin',
-    url: '/linkedin.svg',
+    url: '/linkedin-white.svg',
     link: 'https://www.linkedin.com/in/vigneshgupta/',
   },
   {
     name: 'instagram',
-    url: '/instagram.svg',
+    url: '/instagram-white.svg',
     link: 'https://www.instagram.com/_viggi.g_/',
   },
 ];

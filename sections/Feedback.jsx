@@ -36,7 +36,7 @@ const Feedback = () => (
           variants={zoomIn(0.4, 1)}
           className="lg:block hidden absolute -left-[10%] top-[3%]"
         >
-          <img src="/spinner.svg" alt="stamp" className="md:w-[170px] w-[115px]  md:h-[170px] h-[115px] object-contain" />
+          <img src="/spinner-white.svg" alt="stamp" className="md:w-[170px] w-[115px]  md:h-[170px] h-[115px] object-contain" />
         </motion.div>
       </motion.div>
     </motion.div>

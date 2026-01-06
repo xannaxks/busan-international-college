@@ -1,4 +1,4 @@
-const AdmissionsCriteria = () => {
+const   AdmissionsCriteria = () => {
     return (
         <table className="min-w-full border-collapse border border-gray-600 text-left text-gray-200">
             <caption className="text-lg font-semibold mb-4 text-gray-100">Consist of Criteria, Rate, Details</caption>
@@ -9,11 +9,11 @@ const AdmissionsCriteria = () => {
                 <col className="w-7/12"/>
             </colgroup>
 
-            <thead className="bg-gray-700">
+            <thead className="bg-[#fff4e6]">
             <tr>
-                <th scope="col" className="border border-gray-600 px-4 py-2 text-gray-100">Criteria</th>
-                <th scope="col" className="border border-gray-600 px-4 py-2 text-gray-100">Rate</th>
-                <th scope="col" className="border border-gray-600 px-4 py-2 text-gray-100">Details</th>
+                <th scope="col" className="border border-gray-600 px-4 py-2 text-gray-600">Criteria</th>
+                <th scope="col" className="border border-gray-600 px-4 py-2 text-gray-600">Rate</th>
+                <th scope="col" className="border border-gray-600 px-4 py-2 text-gray-600">Details</th>
             </tr>
             </thead>
 

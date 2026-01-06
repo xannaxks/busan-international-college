@@ -15,18 +15,18 @@ const ApplicationSchedule = () => {
                 <col className="w-1/8"/>
             </colgroup>
 
-            <thead className="bg-gray-700">
+            <thead className="bg-[#fff4e6]">
             <tr>
-                <th rowSpan="2" className="border border-gray-600 px-4 py-2 text-gray-100">Progress</th>
-                <th colSpan="2" className="border border-gray-600 px-4 py-2 text-gray-100">Spring semester (March)</th>
-                <th colSpan="2" className="border border-gray-600 px-4 py-2 text-gray-100">Fall semester (September)
+                <th rowSpan="2" className="border border-gray-600 px-4 py-2 text-gray-600">Progress</th>
+                <th colSpan="2" className="border border-gray-600 px-4 py-2 text-gray-600">Spring semester (March)</th>
+                <th colSpan="2" className="border border-gray-600 px-4 py-2 text-gray-600">Fall semester (September)
                 </th>
             </tr>
             <tr>
-                <th className="border border-gray-600 px-4 py-2 text-gray-100">1st</th>
-                <th className="border border-gray-600 px-4 py-2 text-gray-100">2nd</th>
-                <th className="border border-gray-600 px-4 py-2 text-gray-100">1st</th>
-                <th className="border border-gray-600 px-4 py-2 text-gray-100">2nd</th>
+                <th className="border border-gray-600 px-4 py-2 text-gray-600">1st</th>
+                <th className="border border-gray-600 px-4 py-2 text-gray-600">2nd</th>
+                <th className="border border-gray-600 px-4 py-2 text-gray-600">1st</th>
+                <th className="border border-gray-600 px-4 py-2 text-gray-600">2nd</th>
             </tr>
             </thead>
 

@@ -23,8 +23,8 @@ const WhatsNew = () => (
         <TypingText title="| Campus Life" />
         <TitleText title={<>Learn about our campus life</>} />
         <div className="mt-[48px] flex flex-wrap justify-between gap-[24px]">
-          <NewFeatures imgUrl="/global-campus.svg" title="Global campus" subtitle="Study in Korea within a diverse international community." />
-          <NewFeatures imgUrl="/international-community.svg" title="International Life" subtitle="A global environment at the heart of East Asia."/>
+          <NewFeatures imgUrl="/global-campus-white.svg" title="Global campus" subtitle="Study in Korea within a diverse international community." />
+          <NewFeatures imgUrl="/international-community-white.svg" title="International Life" subtitle="A global environment at the heart of East Asia."/>
         </div>
       </motion.div>
 

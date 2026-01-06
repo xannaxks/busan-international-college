@@ -11,10 +11,10 @@ const ApplicationDocuments = () => {
                 <col className="w-2/5"/>
             </colgroup>
 
-            <thead className="bg-gray-700">
+            <thead className="bg-[#fff4e6]">
             <tr>
-                <th scope="col" className="border border-gray-600 px-4 py-2 text-gray-100">Section</th>
-                <th colSpan="2" scope="col" className="border border-gray-600 px-4 py-2 text-gray-100">Documents</th>
+                <th scope="col" className="border border-gray-600 px-4 py-2 text-gray-600">Section</th>
+                <th colSpan="2" scope="col" className="border border-gray-600 px-4 py-2 text-gray-600">Documents</th>
             </tr>
             </thead>
 
