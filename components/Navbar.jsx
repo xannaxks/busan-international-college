@@ -32,17 +32,17 @@ const Navbar = () => {
       transition={{ duration: 0.2 }}
       className="fixed top-0 z-[100] flex min-w-full justify-center pt-3 gradient-0"
     >
-        <div className="absolute w-[50%] inset-0 gradient-01-light" />
-      <nav className="flex w-[50%] mx-6 px-10 justify-between rounded-3xl bg-white p-5 text-black *:rounded-xl *:border *:border-gray-200 *:px-7 *:py-2 *:transition-colors *:duration-300 hover:*:bg-gray-200 focus-visible:*:bg-gray-200">
-          <a href={`/search`}>
-              <img src={`/search-crimson.svg`} alt={`search`}/>
-          </a>
-          <a href="/">
-            <span className={`font-bold text-red-700`}>BIC</span>
+      <div className="absolute w-[50%] inset-0 gradient-01-light" />
+      <nav className="flex w-[70%] md:w-[50%] mx-6 px-10 justify-between rounded-3xl bg-white p-5 text-black *:rounded-xl *:border *:border-gray-200 *:px-7 *:py-2 *:transition-colors *:duration-300 hover:*:bg-gray-200 focus-visible:*:bg-gray-200">
+        <a href="/search">
+          <img src="/search-crimson.svg" alt="search" />
         </a>
-          <a href={`/navigation`}>
-              <img src={`/menu-crimson.svg`} alt={`menu`}/>
-          </a>
+        <a href="/">
+          <span className="font-bold text-red-700">BIC</span>
+        </a>
+        <a href="/navigation">
+          <img src="/menu-crimson.svg" alt="menu" />
+        </a>
       </nav>
     </motion.div>
   );

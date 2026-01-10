@@ -27,32 +27,32 @@ export const exploreWorlds = [
 ];
 
 export const competencies = [
-    {
-        id: 'competencie-1',
-        imgUrl: '/objective-1.png',
-        title: 'Do-Spiritsdfsdfsdf',
-    },
-    {
-        id: 'competencie-2',
-        imgUrl: '/objective-2.png',
-        title: 'Ownership and Collaboration',
-    },
-    {
-        id: 'competencie-3',
-        imgUrl: '/objective-3.png',
-        title: 'Innovation and Creative Thinking',
-    },
-    {
-        id: 'competencie-4',
-        imgUrl: '/objective-4.png',
-        title: 'Numbers and Narratives',
-    },
-    {
-        id: 'competencie-5',
-        imgUrl: '/objective-5.png',
-        title: 'Global Perspective with Sustainability',
-    },
-]
+  {
+    id: 'competencie-1',
+    imgUrl: '/objective-1.png',
+    title: 'Do-Spiritsdfsdfsdf',
+  },
+  {
+    id: 'competencie-2',
+    imgUrl: '/objective-2.png',
+    title: 'Ownership and Collaboration',
+  },
+  {
+    id: 'competencie-3',
+    imgUrl: '/objective-3.png',
+    title: 'Innovation and Creative Thinking',
+  },
+  {
+    id: 'competencie-4',
+    imgUrl: '/objective-4.png',
+    title: 'Numbers and Narratives',
+  },
+  {
+    id: 'competencie-5',
+    imgUrl: '/objective-5.png',
+    title: 'Global Perspective with Sustainability',
+  },
+];
 
 export const startingFeatures = [
   'Find a world that suits you and you want to enter',
@@ -229,5 +229,56 @@ export const who_we_are = [
     title: 'Teaching with Innovative and Action-based Learning',
     description: "At BIC, we firmly believe in fostering teaching excellence through innovative and action-based learning approaches. By embracing these methodologies, we ensure that students not only grasp theoretical concepts but also apply them in real-world scenarios. Our faculty members are dedicated to creating dynamic learning environments where students actively engage with course material through hands-on projects, case studies, and interactive discussions. We aim to prepare students with the practical know-how needed for success in today's fast-paced world.",
     url: '/who-we-are-4.jpg',
+  },
+];
+
+export const professors = [
+  {
+    photo: '/global-korean-studies/sang-soo-kim.jpg',
+    name: 'Sang Soo Kim',
+    department: 'Global Korean Studies',
+    office: 'Graduate School Building #4, Room 515',
+    phone: '051 - 629 - 2827',
+    email: 'kissoo@tu.ac.kr',
+    position: 'Professor',
+    responsibilities: 'Introduction to Korean Language Education, Understanding of Language, Korean Pronunciation Education, Korean Language Teaching Practice, etc.',
+    education: 'Ph.D. in Korean Language Education',
+    experience: 'Current: Head, Department of Korean Language Education and Multicultural Studies, College of Future Convergence, Tongmyong University\nConcurrent: Head, Department of Global Korean Studies (GKS), Busan International College, Tongmyong University\nChief Professor, Korean Language Institute, Tongmyong University\nChief Professor, Korean Language Education Program for Foreigners, Lifelong Education Center, Tongmyong University',
+      journalArticles: [
+          'Kim, Sang-Soo (2025). A Study on the Teaching Practice Experiences of Prospective Korean Language Teachers. Woorimal Studies, Vol. 81.',
+          'Kim, Sang-Soo (2024). A Study on the Overseas Teaching Experiences of Korean Language Teachers. Woorimal Studies, Vol. 79.',
+          'Kim, Sang-Soo (2024). Perception of Prospective Korean Language Teachers on the Multicultural Phenomenon in Korean Society. Journal of Curriculum and Teaching, Vol. 13, No. 2.',
+          'Kim, Sang-Soo (2022). An Analysis of Trends in Korean Pronunciation Education Using Text Mining. Hanminjok Cultural Studies, Vol. 80.',
+          'Kim, Sang-Soo (2022). An Empirical Narrative Study on Korean Language Teachers’ Experiences in Textbook Development. Woorimal Studies, Vol. 71.',
+          'Kim, Sang-Soo (2021). A Study on the Current Status and Analysis of Korean Lesson Plan Writing. Woorimal Studies, Vol. 67.',
+          'Kim, Sang-Soo (2021). A Study on the Class Composition and Content of Prospective Korean Language Teachers. APJCRI, Vol. 7, No. 11.',
+          'Kim, Sang-Soo (2020). A Study on Self-Observation and Analysis of Korean Teachers’ Lessons. Woorimal Studies, Vol. 63.',
+          'Kim, Sang-Soo (2020). A Study on Learning Anxiety among Domestic Korean Language Learners. Woorimal Studies, Vol. 61.',
+          'Kim, Sang-Soo (2019). A Study on Burnout among Korean Language Teachers. AJMAHS, Vol. 9, No. 5.',
+          'Kim, Sang-Soo (2018). Beliefs of Korean Language Teachers about Language Learning and Korean Language Learning. ASIS Life Sciences, 27(2).',
+          'Kim, Sang-Soo (2018). A Study on the Lesson Design and Implementation of Korean Language Teachers. AJMAHS, Vol. 8, No. 9.',
+          'Kim, Sang-Soo (2018). A Study on Self-Determination Motivation among Vietnamese Students Studying in Korea. AJMAHS, Vol. 8, No. 5.',
+          'Kim, Sang-Soo (2018). A Study on Educational Beliefs of Korean Language Teachers. AJMAHS, Vol. 8, No. 4.',
+          'Kim, Sang-Soo (2018). A Study on the Usage of the Korean Connective Ending “-go” by Chinese Learners. Journal of China Studies, 21(1).',
+          'Kim, Sang-Soo (2018). A Study on Learning Motivation of Kuwaiti Students Based on Self-Determination Theory. AJMAHS, Vol. 8, No. 2.',
+          'Kim, Sang-Soo (2018). A Study on Lesson Observation for Diagnosis and Improvement. AJMAHS, Vol. 8, No. 1.',
+          'Kim, Sang-Soo (2017). A Study on Question Types Appearing in Lesson Plans. AJMAHS, Vol. 7, No. 12.',
+          'Kim, Sang-Soo (2017). A Study on the Use of Guidelines for Developing Assessment Items. AJMAHS, Vol. 7, No. 11.',
+          'Kim, Sang-Soo (2015). A Study on Teacher–Learner Interaction through Question Script Writing. Teaching Korean as a Foreign Language, Vol. 42, Yonsei University Korean Language Institute.',
+          'Kim, Sang-Soo (2014). A Study on the Discourse Construction of Korean Language Learners. Woorimal Studies, Vol. 38.',
+          'Kim, Sang-Soo (2013a). A Study on Questioning Strategies in Korean Teachers’ Utterances. Korean Linguistics, Vol. 60.',
+          'Kim, Sang-Soo (2013b). A Study on Self-Repair in Oral Assessment Discourse. Language and Culture, Vol. 9(1).',
+          'Kim, Sang-Soo (2013c). Korean Language and Korean Language Education. Busan Hangeul, Vol. 32.',
+          'Kim, Sang-Soo (2011a). A Study on Speaking Assessment through Discourse Analysis. Korean Linguistics, Vol. 52.',
+          'Kim, Sang-Soo (2011b). A Study on the Use of Cohesive Devices in Speaking Assessment Discourse of Korean Learners. Language and Culture, Vol. 7(2).',
+          'Kim, Sang-Soo (2009). A Study on Self-Repair in the Speech of Korean Language Learners. Dongnam Language and Literature, Vol. 28.',
+          'Kim, Sang-Soo (2008). A Study on the Fluency Judgment of Korean Language Learners’ Speech. Korean Language Education, Vol. 19(2).',
+          'Kim, Sang-Soo (2007). A Study on Speaking Activities in Korean Language Textbooks. Dongnam Language and Literature, Vol. 24.',
+          'Kim, Sang-Soo (2006a). A Trend Analysis of Research on Korean Pronunciation Education. Korean Linguistics, Vol. 33.',
+          'Kim, Sang-Soo (2006b). A Trend Analysis of Error Analysis Research in Korean Language Education. Bilingual Studies, Vol. 31.',
+          'Kim, Sang-Soo (2006c). The Current Status and Tasks of Korean Language Education for Ethnic Koreans in China. Comparative Cultural Studies, Vol. 18.',
+          'Kim, Sang-Soo (2005). A Study on Teaching Methods for Korean Idiomatic Expressions. Busan Hangeul, Vol. 24.'
+      ]
+
   },
 ];
