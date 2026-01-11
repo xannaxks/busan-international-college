@@ -9,11 +9,11 @@ const RootLayout = ({ children }) => (
     </head>
     <body>
       <div className="bg-[url(/background-celled-crimson.svg)] overflow-hidden">
-        <Navbar/>
-          <div className={`mt-16`}>
-        {children}
-          </div>
-          <Footer/>
+        <Navbar />
+        <div className="mt-16">
+          {children}
+        </div>
+        <Footer />
       </div>
     </body>
   </html>
