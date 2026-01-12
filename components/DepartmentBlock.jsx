@@ -18,6 +18,7 @@ const Page = ({ department_name, overview, description, curriculum }) => (
       className={`${styles.innerWidth} mx-auto ${styles.flexCenter} flex-col`}
     >
       <TypingText
+        /* eslint-disable-next-line camelcase */
         title={`| ${department_name}`}
         className="flex flex-wrap"
         textStyles="text-center text-[45px]"

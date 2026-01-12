@@ -44,3 +44,5 @@ next-env.d.ts
 /public/tu_mascot.svg
 .eslintrc.js
 .eslintrc.json
+
+/app/generated/prisma

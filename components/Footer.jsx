@@ -25,10 +25,11 @@ const Footer = () => (
             alt="headset"
             className="w-[24px] h-[24px] object-contain"
           />
-          <a href={"/navigation"}>
+          <a href="/navigation">
             <span className="font-normal text-[16px] text-white">
-            Enter BIC
-          </span></a>
+              Enter BIC
+            </span>
+          </a>
         </button>
       </div>
 

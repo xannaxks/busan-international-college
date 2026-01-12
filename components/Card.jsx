@@ -26,6 +26,7 @@ const Section = ({ title, children }) => (
 /* ---------------------------------------------
    Main component
 ---------------------------------------------- */
+// eslint-disable-next-line react/function-component-definition
 export default function ExpandableCard({
   photo,
   name,
@@ -187,14 +188,15 @@ export default function ExpandableCard({
               <Section title="Journal Articles">
                 <ul className="list-disc list-inside space-y-1">
                   {journalArticles.map((item, i) => (
-                        <li key={i}>{item}</li>
-                      ))}
+                    <li key={i}>{item}</li>
+                  ))}
                 </ul>
               </Section>
             </div>
 
             {/* ===== Footer (fixed) ===== */}
             <div className="p-6 sm:p-8 border-t border-white/10 flex justify-end">
+              {/* eslint-disable-next-line react/button-has-type */}
               <button
                 onClick={() => setIsOpen(false)}
                 className="
