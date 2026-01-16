@@ -1,168 +1,205 @@
 'use client';
 
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
-const DropdownSection = ({ title, children }) => {
-  const [open, setOpen] = useState(false);
+import NavBarDropdown from './NavBarSections';
+import MobileDropdownSection from './MobileDropdownSection';
 
-  return (
-    <div className="border-b border-gray-200 pb-4">
-      <button
-        onClick={() => setOpen((v) => !v)}
-        className="flex w-full items-center justify-between text-left text-lg font-semibold"
-      >
-        {title}
+/* ================= DATA ================= */
+const NAV_SECTIONS_LEFT = [
+  {
+    title: 'About BIC',
+    links: [
+      { href: '/who-we-are', label: 'Who we are' },
+      { href: '/meet-the-dean', label: 'Meet the Dean' },
+      { href: '/partners', label: 'Partners' },
+      { href: '/visit-bic', label: 'Visit BIC' },
+    ],
+  },
+  {
+    title: 'Academics',
+    links: [
+      { href: '/education-at-bic', label: 'Education at BIC' },
+      { href: '/billing', label: 'Faculty' },
+      { href: '/security', label: 'Undergraduate Programs' },
+    ],
+  },
+];
 
-        <motion.span
-          animate={{ rotate: open ? 180 : 0 }}
-          transition={{ duration: 0.2 }}
-          className="text-gray-500"
-        >
-          ▼
-        </motion.span>
-      </button>
+const NAV_SECTIONS_RIGHT = [
+  {
+    title: 'Admissions',
+    links: [
+      { href: '/admissions-requirements', label: 'Admissions Requirements' },
+      { href: '/tuition-and-scholarships', label: 'Tuition & Scholarships' },
+      { href: '/application-guidelines', label: 'Application Guidelines' },
+    ],
+  },
+  {
+    title: 'Support',
+    links: [
+      { href: '/academic-affairs', label: 'Academic Affairs' },
+      { href: '/student-life', label: 'Student Life' },
+      { href: '/career-support', label: 'Career Support' },
+    ],
+  },
+  {
+    title: 'News & Events',
+    links: [
+      { href: '/notice', label: 'Notice' },
+      { href: '/faqs', label: 'FAQs' },
+      { href: '/bic-news', label: 'BIC News' },
+      { href: '/bic-events', label: 'BIC Events' },
+    ],
+  },
+];
+const ALL_SECTIONS = [...NAV_SECTIONS_LEFT, ...NAV_SECTIONS_RIGHT];
 
-      <AnimatePresence initial={false}>
-        {open && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: 'easeInOut' }}
-            className="overflow-hidden"
-          >
-            <div className="mt-3 flex flex-col gap-3 text-base text-gray-600">
-              {children}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
-
+/* ================= NAVBAR ================= */
 const Navbar = () => {
   const [hidden, setHidden] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
   const { scrollY } = useScroll();
-  const lastYRef = useRef(0);
+  const lastY = useRef(0);
 
   useMotionValueEvent(scrollY, 'change', (y) => {
-    if (menuOpen) return; // prevent hiding while menu is open
+    if (menuOpen) return;
 
-    const difference = y - lastYRef.current;
-    if (Math.abs(difference) > 180) {
-      setHidden(difference > 0);
-      lastYRef.current = y;
+    // If we are at the top, peek the navbar
+    if (y === 0) {
+      setHidden(false);
+      lastY.current = 0; // reset lastY to avoid jump
+      return;
+    }
+
+    const diff = y - lastY.current;
+    if (Math.abs(diff) > 180) {
+      setHidden(diff > 0); // hide if scrolling down, show if scrolling up
+      lastY.current = y;
     }
   });
 
-  // lock scroll when menu is open
+  useEffect(() => { document.body.style.overflow = menuOpen ? 'hidden' : ''; }, [menuOpen]);
+
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : '';
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [menuOpen]);
+    const handler = (e) => { if (!e.target.closest('[data-dropdown]')) setActiveDropdown(null); };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, []);
+
+  const renderDesktopGroup = (sections) => (
+    <div className="hidden lg:flex flex-1 items-center justify-around gap-8">
+      {sections.map((section) => (
+        <NavBarDropdown
+          key={section.title}
+          section={section}
+          isOpen={activeDropdown === section.title}
+          onToggle={() => setActiveDropdown(activeDropdown === section.title ? null : section.title)}
+        />
+      ))}
+    </div>
+  );
 
   return (
     <>
-      {/* NAVBAR */}
       <motion.div
-        animate={hidden ? 'hidden' : 'visible'}
-        initial="visible"
-        whileHover={hidden ? 'peeking' : 'visible'}
-        onFocusCapture={hidden ? () => setHidden(false) : undefined}
-        variants={{
-          visible: { y: '0%' },
-          hidden: { y: '-90%' },
-          peeking: { y: '10%', cursor: 'pointer' },
-        }}
+        animate={{ y: menuOpen ? '-100%' : hidden ? '-90%' : '0%' }}
         transition={{ duration: 0.2 }}
-        className="fixed top-0 z-[100] flex min-w-full justify-center pt-3 gradient-0"
+        className="fixed top-0 z-50 flex w-full justify-center pt-3"
       >
-        <div className="absolute w-[50%] inset-0 gradient-01-light" />
+        <nav className="flex w-[90%] xl:w-[80%] items-center rounded-3xl bg-white p-5 justify-between px-10">
 
-        <nav className="flex w-[70%] md:w-[50%] mx-6 px-10 justify-between rounded-3xl bg-white p-5 text-black *:rounded-xl *:border *:border-gray-200 *:px-7 *:py-2 *:transition-colors *:duration-300 hover:*:bg-gray-200 focus-visible:*:bg-gray-200">
+          {/* 1 — Search */}
+          {/* 4 — Logo */}
+          <a href="/" className="font-bold text-red-700 shrink-0 hidden lg:block text-xl">
+            BIC
+          </a>
+
+          {/* 2–3 — Left sections */}
+          {NAV_SECTIONS_LEFT.map((section) => (
+            <div key={section.title} className="hidden lg:block">
+              <NavBarDropdown
+                key={section.title}
+                section={section}
+                isOpen={activeDropdown === section.title}
+                onToggle={() =>
+                  setActiveDropdown(activeDropdown === section.title ? null : section.title)
+                }
+              />
+            </div>
+          ))}
+
+
+
+          {/* 5–7 — Right sections */}
+          {NAV_SECTIONS_RIGHT.map((section) => (
+            <div key={section.title} className="hidden lg:block">
+              <NavBarDropdown
+                key={section.title}
+                section={section}
+                isOpen={activeDropdown === section.title}
+                onToggle={() =>
+                  setActiveDropdown(activeDropdown === section.title ? null : section.title)
+                }
+              />
+            </div>
+          ))}
+
           <a href="/search">
             <img src="/search-crimson.svg" alt="search" />
           </a>
-
-          <a href="/">
-            <span className="font-bold text-red-700">BIC</span>
+          <a href="/" className="font-bold text-red-700 shrink-0 block lg:hidden">
+            BIC
           </a>
-
-          {/* MENU BUTTON */}
-          {/* eslint-disable-next-line react/button-has-type */}
-          <button onClick={() => setMenuOpen(true)} aria-label="Open menu">
+          {/* Mobile button */}
+          <button onClick={() => setMenuOpen(true)} className="lg:hidden">
             <img src="/menu-crimson.svg" alt="menu" />
           </button>
         </nav>
       </motion.div>
 
-      {/* OVERLAY + MENU */}
+      {/* MOBILE MENU */}
+      {/* MOBILE MENU */}
       <AnimatePresence>
         {menuOpen && (
-        <>
-          {/* DARK BACKDROP */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.5 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-[90] bg-black"
-            onClick={() => setMenuOpen(false)}
-          />
-
-          {/* BURGER MENU */}
-          <motion.aside
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-            className="fixed top-0 right-0 z-[101] h-full w-[80%] sm:w-[400px] bg-white shadow-2xl p-8 overflow-y-auto"
-
-          >
-            <button
+          <>
+            {/* Overlay */}
+            <motion.div
+              className="fixed inset-0 z-40 bg-black/50"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               onClick={() => setMenuOpen(false)}
-              className="mb-6 text-sm text-gray-500 hover:text-black"
+            />
+
+            {/* Sliding menu */}
+            <motion.aside
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ duration: 0.3, ease: 'easeOut' }}
+              className="fixed top-0 right-0 z-50 h-full w-[80%] bg-white p-8 overflow-y-auto"
             >
-              Close ✕
-            </button>
-
-            <div className="flex flex-col gap-6">
-              {/* SIMPLE LINK */}
-              <a href="/profile" className="text-lg font-semibold">
-                Profile
-              </a>
-
-              {/* DROPDOWNS */}
-              <DropdownSection title="Navigation">
-                <a href="/">Home</a>
-                <a href="/search">Search</a>
-                <a href="/favorites">Favorites</a>
-              </DropdownSection>
-
-              <DropdownSection title="Account">
-                <a href="/settings">Settings</a>
-                <a href="/billing">Billing</a>
-                <a href="/security">Security</a>
-              </DropdownSection>
-
-              <DropdownSection title="More">
-                <a href="/about">About</a>
-                <a href="/help">Help</a>
-              </DropdownSection>
-
-              {/* DANGER ZONE */}
-              <button className="mt-6 text-left text-lg font-semibold text-red-600">
-                Logout
+              {/* Close button */}
+              {/* eslint-disable-next-line react/button-has-type */}
+              <button
+                onClick={() => setMenuOpen(false)}
+                className="mb-6 text-gray-600 font-semibold"
+              >
+                Close ✕
               </button>
-            </div>
-          </motion.aside>
-        </>
+
+              {/* Menu sections */}
+              <div className="flex flex-col gap-6">
+                {ALL_SECTIONS.map((section) => (
+                  <MobileDropdownSection key={section.title} section={section} />
+                ))}
+              </div>
+            </motion.aside>
+          </>
         )}
       </AnimatePresence>
 
