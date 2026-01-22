@@ -90,31 +90,32 @@ const Navbar = () => {
     return () => document.removeEventListener('mousedown', handler);
   }, []);
 
-  const renderDesktopGroup = (sections) => (
-    <div className="hidden lg:flex flex-1 items-center justify-around gap-8">
-      {sections.map((section) => (
-        <NavBarDropdown
-          key={section.title}
-          section={section}
-          isOpen={activeDropdown === section.title}
-          onToggle={() => setActiveDropdown(activeDropdown === section.title ? null : section.title)}
-        />
-      ))}
-    </div>
-  );
-
   return (
     <>
       <motion.div
         animate={{ y: menuOpen ? '-100%' : hidden ? '-90%' : '0%' }}
         transition={{ duration: 0.2 }}
-        className="fixed top-0 z-50 flex w-full justify-center pt-3"
+        className="
+          fixed top-0 z-50
+          flex
+          w-[100vw]
+          justify-center
+          pt-3
+        "
       >
-        <nav className="flex w-[90%] xl:w-[80%] items-center rounded-3xl bg-white p-5 justify-between px-10">
+        <nav className="
+          flex
+          w-[90%] xl:w-[80%]
+          items-center justify-between
+          rounded-3xl
+          bg-white
+          p-5 px-10
+         "
+        >
 
           {/* 1 — Search */}
           {/* 4 — Logo */}
-          <a href="/" className="font-bold text-red-700 shrink-0 hidden lg:block text-xl">
+          <a href="/" className="font-bold text-red-700 hidden lg:block text-xl">
             BIC
           </a>
 
@@ -125,14 +126,10 @@ const Navbar = () => {
                 key={section.title}
                 section={section}
                 isOpen={activeDropdown === section.title}
-                onToggle={() =>
-                  setActiveDropdown(activeDropdown === section.title ? null : section.title)
-                }
+                onToggle={() => setActiveDropdown(activeDropdown === section.title ? null : section.title)}
               />
             </div>
           ))}
-
-
 
           {/* 5–7 — Right sections */}
           {NAV_SECTIONS_RIGHT.map((section) => (
@@ -141,20 +138,19 @@ const Navbar = () => {
                 key={section.title}
                 section={section}
                 isOpen={activeDropdown === section.title}
-                onToggle={() =>
-                  setActiveDropdown(activeDropdown === section.title ? null : section.title)
-                }
+                onToggle={() => setActiveDropdown(activeDropdown === section.title ? null : section.title)}
               />
             </div>
           ))}
 
-          <a href="/search">
+          <a href="/find">
             <img src="/search-crimson.svg" alt="search" />
           </a>
           <a href="/" className="font-bold text-red-700 shrink-0 block lg:hidden">
             BIC
           </a>
           {/* Mobile button */}
+          {/* eslint-disable-next-line react/button-has-type */}
           <button onClick={() => setMenuOpen(true)} className="lg:hidden">
             <img src="/menu-crimson.svg" alt="menu" />
           </button>

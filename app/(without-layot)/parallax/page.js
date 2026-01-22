@@ -14,6 +14,7 @@ const layerImages = [
   'https://gist.githubusercontent.com/mondenoir/5395b6e7d9445c3a0fc82e6ece97268c/raw/bca5c0c6397e38d79b5af9e88f78f0aa7b515b94/img-1.svg',
 ];
 
+// eslint-disable-next-line react/function-component-definition
 export default function ParallaxPage() {
   const layersRef = useRef([]);
 
@@ -23,6 +24,7 @@ export default function ParallaxPage() {
       layersRef.current.forEach((layer, i) => {
         if (layer) {
           const index = layersRef.current.length - i;
+          // eslint-disable-next-line no-param-reassign
           layer.style.transform = `translateY(${(i * 0.1) * y}px)`;
         }
       });
@@ -39,6 +41,7 @@ export default function ParallaxPage() {
           <li
             key={idx}
             className="layer"
+            /* eslint-disable-next-line no-return-assign */
             ref={(el) => (layersRef.current[idx] = el)}
             style={{ backgroundImage: `url(${src})` }}
           />
@@ -55,7 +58,7 @@ export default function ParallaxPage() {
             Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC...
           </p>
         </section>
-
+        <div className="bg-red-700 h-[100vh]" />
         <footer>
           <IonIcon icon={logoTwitter} />
           <IonIcon icon={logoInstagram} />

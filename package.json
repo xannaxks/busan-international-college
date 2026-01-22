@@ -11,12 +11,18 @@
   "dependencies": {
     "@ionic/react": "^8.7.16",
     "@prisma/client": "^7.2.0",
+    "clsx": "^2.1.1",
+    "cobe": "^0.6.5",
     "eslint-config-next": "13.0.3",
     "framer-motion": "^12.24.7",
     "ionicons": "^8.0.13",
-    "next": "13.0.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "lenis": "^1.3.17",
+    "lucide-react": "^0.562.0",
+    "motion": "^12.27.0",
+    "next": "^16.1.3",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",

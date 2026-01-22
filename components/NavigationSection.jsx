@@ -35,7 +35,7 @@ const NavigationSection = ({ index, section, links }) => {
           >
             <div className="mt-4 space-y-2">
               {links.map((link, i) => (
-                <a href={`/${link.url}`}>
+                <a key={i} href={`/${link.url}`}>
                   <div
                     key={i}
                     className="font-normal lg:text-[20px] text-[14px] text-secondary-white"

@@ -6,7 +6,7 @@ import { ai_and_computer_engineering, professors } from '../../constants';
 import ExpandableCard from '../../components/Card';
 
 const Page = () => (
-  <div className="flex flex-col justify-center items-center">
+  <div className="flex flex-col justify-center items-center w-full">
     <DepartmentBlock
       department_name="AI & Computer Engineering"
       overview={ai_and_computer_engineering.overview}
@@ -16,19 +16,22 @@ const Page = () => (
     <div className="flex justify-center gap-10 flex-wrap sm:w-[99%] md:w-[90%] lg:w-[80%]">
       {professors.map((item, i) => (
         <ExpandableCard
+          key={i}
           {...item}
         />
       ))}
-        {professors.map((item, i) => (
-            <ExpandableCard
-                {...item}
-            />
-        ))}
-        {professors.map((item, i) => (
-            <ExpandableCard
-                {...item}
-            />
-        ))}
+      {professors.map((item, i) => (
+        <ExpandableCard
+          key={i}
+          {...item}
+        />
+      ))}
+      {professors.map((item, i) => (
+        <ExpandableCard
+          key={i}
+          {...item}
+        />
+      ))}
     </div>
   </div>
 );
