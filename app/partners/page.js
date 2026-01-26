@@ -4,9 +4,8 @@ import { motion } from 'framer-motion';
 import Globe from '../../components/Globe';
 import styles from '../../styles';
 import { fadeIn, staggerContainer, textVariant } from '../../utils/motion';
-import TextAndImage from '../../sections/TextAndImage';
+import InfiniteBanner from '../../components/Banner';
 import { TitleText, TypingText } from '../../components';
-import { who_we_are, competencies } from '../../constants';
 
 const Page = () => (
   <section>
@@ -29,7 +28,7 @@ const Page = () => (
 
       </motion.div>
     </section> {/* HERO */}
-    <div className="relative">
+    <div className="relative mt-20">
       <section className={`${styles.paddings} relative z-10`}>
         <div className="gradient-02 z-0" />
 
@@ -63,8 +62,12 @@ const Page = () => (
       <div className="gradient-03 z-0" />
 
     </div>
-    <div>
+    <div className={'mt-20'}>
       <Globe />
+    </div>
+    <div className={'mt-40'}>
+      <InfiniteBanner to={'left'} />
+      <InfiniteBanner to={'right'} />
     </div>
   </section>
 );
