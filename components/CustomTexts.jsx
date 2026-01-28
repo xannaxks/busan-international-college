@@ -9,8 +9,9 @@ export const TypingText = ({ title, textStyles }) => (
     className={`
     flex flex-wrap 
     items-center justify-center
-    font-normal text-[14px] text-secondary-white
+    font-normal text-[30px] text-secondary-white
     w-[95%]
+    z-50
     ${textStyles}`}
   >
     {Array.from(title).map((letter, i) => (
@@ -27,7 +28,7 @@ export const TitleText = ({ title, textStyles }) => (
     variants={textVariant2}
     initial="hidden"
     whileInView="show"
-    className={`mt-[8px] font-bold md:text-[64px] text-[40px] text-white ${textStyles}`}
+    className={`mt-[8px] font-bold md:text-[64px] text-[40px] text-white z-50 ${textStyles}`}
   >{title}
   </motion.h2>
 );

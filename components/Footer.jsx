@@ -8,7 +8,7 @@ import InfiniteBanner from './Banner';
 
 const Footer = () => (
   <div>
-    <div className={'my-40'}>
+    <div className={'my-24'}>
       <InfiniteBanner to={'left'} />
       <InfiniteBanner to={'right'} />
     </div>

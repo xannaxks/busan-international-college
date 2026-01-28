@@ -46,7 +46,7 @@ const Page = () => (
 
           <motion.p
             variants={fadeIn('up', 'tween', 0.2, 1)}
-            className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-secondary-white mt-5"
+            className="font-normal sm:text-[32px] text-[20px] text-center text-white mt-5"
           >
             BIC is globally recognized as the epicenter of innovation in education. At BIC, we cultivate individuals who pioneer creative approaches to the world's most complex challenges.
 
@@ -64,7 +64,7 @@ const Page = () => (
         </motion.div>
       </section> {/* ABOUT */}
       <div className="gradient-03 z-0" />
-      <section className={`${styles.paddings}`} id="explore">
+      <section className={`${styles.paddings} z-10`} id="explore">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -75,10 +75,11 @@ const Page = () => (
           <TypingText title="| Competencies" textStyles="text-center" />
           <TitleText title={<>BIC’s 5 core competencies: DOING </>} textStyles="text-center" />
 
-          <div className="mt-[50px] flex lg:flex-row flex-col min-h-[40vh] gap-5 w-full">
+          <div className="mt-[50px] flex lg:flex-row flex-col min-h-[40vh] gap-5 w-full z-10">
             {competencies.map((competencie, index) => (
-              <div key={index} className="flex items-center gap-2 flex-col text-white text-[20px] w-full justify-center">
+              <div key={index} className="flex items-center gap-2 flex-col text-white text-[20px] w-full justify-center z-20">
                 <img
+                  className="z-10"
                   src={competencie.imgUrl}
                   width={100}
                   height={100}
@@ -92,10 +93,10 @@ const Page = () => (
         </motion.div>
       </section> {/* five cores */}
     </div>
-    <div className="relative">
+    <div className="relative z-10">
       {who_we_are.map((item, index) => (
         <div key={index}>
-          <div className="gradient-04 z-0" />
+          {/*<div className="gradient-04 z-0" />*/}
           <TextAndImage key={index} {...item} />
         </div>
       ))}

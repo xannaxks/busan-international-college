@@ -1,5 +1,5 @@
 /*@import "tailwindcss";*/
-
+@plugin "daisyui";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -60,17 +60,61 @@
     filter: blur(175px);
     transform: rotate(-114.2deg);
 }
+    /* wrapper to contain blobs safely */
 
-.gradient-04 {
-    position: absolute;
-    width: 304px;
-    height: 100vh;
-    left: 30%;
-    top: 10%;
-    background: rgba(255, 255, 255, 0.55);
-    filter: blur(200px);
-    transform: rotate(-53.13deg);
+.bg-effects {
+    position: fixed;      /* fixed = stays during scroll */
+    inset: 0;             /* top:0; right:0; bottom:0; left:0 */
+    overflow: hidden;     /* hide all overflow from blur */
+    pointer-events: none; /* don’t block clicks */
+    z-index: 0;          /* behind everything */
 }
+
+    /* main blob */
+.gradient-04-animated {
+    position: absolute;
+    width: clamp(600px, 80vw, 1200px); /* responsive width */
+    height: 100vh;                     /* spans full scroll height */
+
+    left: 50%;                         /* center anchor */
+    top: -20%;                         /* offset upwards */
+    transform: translateX(-50%) rotate(-55deg);
+
+    background: linear-gradient(
+            120deg,
+            #7b2cff,   /* purple */
+            #ff4ecd,   /* pink */
+            #0a1a3f,   /* navy */
+            #b11226    /* crimson */
+    );
+
+    background-size: 300% 300%;        /* makes gradient moveable */
+    animation: blobFloat 5s ease-in-out infinite alternate; /* smooth lightweight animation */
+
+    filter: blur(120px);               /* soft glow */
+    opacity: 0.5;                      /* subtle */
+    will-change: transform;            /* GPU-optimized */
+}
+
+/* keyframes: smooth floating movement */
+@keyframes blobFloat {
+    0% {
+        transform: translateX(-50%) translateY(0) rotate(-55deg);
+    }
+    25% {
+        transform: translateX(-50%) translateY(60px) rotate(-50deg);
+    }
+    50% {
+        transform: translateX(-50%) translateY(120px) rotate(-52deg);
+    }
+    75% {
+        transform: translateX(-50%) translateY(60px) rotate(-51deg);
+    }
+    100% {
+        transform: translateX(-50%) translateY(0) rotate(-55deg);
+    }
+}
+
 
 .gradient-05 {
     background: linear-gradient(
@@ -96,8 +140,12 @@
     height: 100px;
     left: 37%;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.5);
+    /*background: rgba(255, 255, 255, 0.5);*/
     filter: blur(150px);
+    background: #BE93C5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #7BC6CC, #BE93C5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #7BC6CC, #BE93C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 /* ================= CRIMSON (DARK) ================= */
@@ -195,8 +243,25 @@
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
+
+
 /* Custom infinite scroll animation */
 @layer utilities {
+
+    @keyframes moveGradient {
+        0% { background-position: 0% 0%, 100% 100%, 50% 50%; }
+        50% { background-position: 100% 0%, 0% 100%, 50% 50%; }
+        100% { background-position: 0% 0%, 100% 100%, 50% 50%; }
+    }
+
+    .section-gradient-animated {
+        background:
+                radial-gradient(circle at top left, rgba(255,255,255,0.05), transparent 70%),
+                radial-gradient(circle at bottom right, rgba(255,255,255,0.08), transparent 60%),
+                linear-gradient(135deg, rgba(255,200,200,0.1), rgba(200,100,150,0.1));
+        background-size: 200% 200%;
+        animation: moveGradient 20s ease infinite;
+    }
 
     .animate-infinite-scroll {
         animation: infinite-scroll 25s linear infinite;
@@ -211,3 +276,24 @@
     }
 
 }
+
+/* Complex purple-blue-red-crimson animated gradient */
+@layer utilities {
+
+    @keyframes moveComplexGradient {
+        0% { background-position: 0% 50%, 100% 50%, 50% 0%; }
+        50% { background-position: 100% 50%, 0% 50%, 50% 100%; }
+        100% { background-position: 0% 50%, 100% 50%, 50% 0%; }
+    }
+
+    .section-gradient-purple-red {
+        background:
+                radial-gradient(circle at 20% 30%, rgba(138, 43, 226, 0.2), transparent 70%),
+                radial-gradient(circle at 80% 70%, rgba(30, 144, 255, 0.2), transparent 60%),
+                linear-gradient(135deg, rgba(255,0,0,0.15), rgba(220,20,60,0.15), rgba(138,43,226,0.15));
+        background-size: 200% 200%;
+        background-repeat: no-repeat;
+        animation: moveComplexGradient 15s ease infinite;
+    }
+}
+

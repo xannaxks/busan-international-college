@@ -4,9 +4,17 @@ import { motion } from 'framer-motion';
 import Globe from '../../components/Globe';
 import styles from '../../styles';
 import { fadeIn, staggerContainer, textVariant } from '../../utils/motion';
-import InfiniteBanner from '../../components/Banner';
-import { TitleText, TypingText } from '../../components';
+// import InfiniteBanner from '../../components/Banner';
+import { TypingText } from '../../components';
+import TwoBlocks from '../../components/TwoBlocks';
 
+const text1 = [
+  'BIC has established partnerships with over 300 academic institutions worldwide through Memorandums of Understanding (MOUs) at Tongmyong University. Tongmyong University offers student exchange programs with 19 partner universities in the USA, China, Japan, Germany, and other countries. For further details, please visit the link provided below.',
+];
+
+const text2 = [
+  'BIC has forged partnerships with globally recognized companies such as AWS (Amazon Web Services), Cisco, and Apple Academy. Through special lectures and company visits, students engage with professionals from Samsung Electronics, LG, Hyundai, SK, and Coupang. Local Busan-based companies also provide Capstone Projects, Co-op programs, and internship opportunities.',
+];
 const Page = () => (
   <section>
     <section className={`${styles.yPaddings} sm:pl-16 pl-6`}>
@@ -46,7 +54,7 @@ const Page = () => (
 
           <motion.p
             variants={fadeIn('up', 'tween', 0.2, 1)}
-            className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-secondary-white mt-5"
+            className="font-normal sm:text-[32px] text-[20px] text-center text-secondary-white mt-5"
           >
             We deliver top-quality practical teaching through collaborations with our industry and academic partners.
           </motion.p>
@@ -62,12 +70,11 @@ const Page = () => (
       <div className="gradient-03 z-0" />
 
     </div>
-    <div className={'mt-20'}>
-      <Globe />
+    <div>
+      <TwoBlocks text1={text1} text2={text2} header1="Academic Partners" header2="Industry Partners" />
     </div>
-    <div className={'mt-40'}>
-      <InfiniteBanner to={'left'} />
-      <InfiniteBanner to={'right'} />
+    <div className="mt-20">
+      <Globe />
     </div>
   </section>
 );
