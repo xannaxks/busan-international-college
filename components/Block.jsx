@@ -15,10 +15,10 @@ export default function Block({
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
+      initial={{ opacity: 0, x: isLeft ? -80 : 80 }}
       whileInView={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: isLeft ? -40 : 40 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
+      exit={{ opacity: 0, x: isLeft ? -80 : 80 }}
+      transition={{ duration: 0.3, ease: 'linear' }}
       viewport={{ once: false }}
       className={`
         flex-1 rounded-2xl border border-white/40 bg-neutral-950

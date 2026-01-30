@@ -1,0 +1,36 @@
+/* parallax.css */
+
+.parallax-root {
+    scroll-snap-type: y mandatory;
+}
+
+.parallax-item {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parallax-item.snap {
+    scroll-snap-align: start;
+}
+
+.parallax-content {
+    z-index: 1;
+}
+
+.parallax-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.scroll-progress {
+    position: fixed;
+    left: 0;
+    right: 0;
+    transform-origin: 0% 50%;
+}

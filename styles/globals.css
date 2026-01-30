@@ -11,6 +11,13 @@
     font-family: "Eudoxus Sans", sans-serif;
     scroll-behavior: smooth;
 }
+.snap-none {
+    scroll-snap-align: none;
+    min-height: 200px; /* whatever height you need */
+}
+.snap-container {
+    scroll-snap-type: y mandatory; /* snap only inside this container */
+}
 
 /* ================= WHITE / LIGHT (DEFAULT) ================= */
 

@@ -1,70 +1,77 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import { IonIcon } from '@ionic/react';
-import { logoTwitter, logoInstagram, logoFacebook } from 'ionicons/icons';
-import './Parallax.css'; // Move your CSS here
+import { motion } from 'motion/react';
 
-const layerImages = [
-  'https://raw.githubusercontent.com/misalagp/imgs/53ece8c56d462838e143383adc1a3078c1960e4d/1.svg',
-  'https://raw.githubusercontent.com/misalagp/imgs/53ece8c56d462838e143383adc1a3078c1960e4d/2.svg',
-  'https://raw.githubusercontent.com/misalagp/imgs/53ece8c56d462838e143383adc1a3078c1960e4d/3.svg',
-  'https://raw.githubusercontent.com/misalagp/imgs/53ece8c56d462838e143383adc1a3078c1960e4d/4.svg',
-  'https://raw.githubusercontent.com/misalagp/imgs/53ece8c56d462838e143383adc1a3078c1960e4d/4.svg',
-  'https://gist.githubusercontent.com/mondenoir/5395b6e7d9445c3a0fc82e6ece97268c/raw/bca5c0c6397e38d79b5af9e88f78f0aa7b515b94/img-1.svg',
-];
-
-// eslint-disable-next-line react/function-component-definition
-export default function ParallaxPage() {
-  const layersRef = useRef([]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const y = window.scrollY;
-      layersRef.current.forEach((layer, i) => {
-        if (layer) {
-          const index = layersRef.current.length - i;
-          // eslint-disable-next-line no-param-reassign
-          layer.style.transform = `translateY(${(i * 0.1) * y}px)`;
-        }
-      });
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
+function Image({ id }) {
   return (
-    <main>
-      <ul className="parallax">
-        {layerImages.map((src, idx) => (
-          <li
-            key={idx}
-            className="layer"
-            /* eslint-disable-next-line no-return-assign */
-            ref={(el) => (layersRef.current[idx] = el)}
-            style={{ backgroundImage: `url(${src})` }}
-          />
-        ))}
-      </ul>
-
-      <article className="content">
-        <section className="info">
-          <h1>What is Lorem Ipsum?</h1>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...
-          </p>
-          <p>
-            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC...
-          </p>
-        </section>
-        <div className="bg-red-700 h-[100vh]" />
-        <footer>
-          <IonIcon icon={logoTwitter} />
-          <IonIcon icon={logoInstagram} />
-          <IonIcon icon={logoFacebook} />
-        </footer>
-      </article>
-    </main>
+    <section className="img-container">
+      <div>
+        <img src={`/photos/cityscape/${id}.jpg`} alt="Cityscape" />
+      </div>
+      <motion.h2>{`#00${id}`}</motion.h2>
+    </section>
   );
 }
+
+export default function Parallax() {
+  return (
+    <div className="example">
+      {[1, 2, 3, 4, 5].map((id) => (
+        <Image key={id} id={id} />
+      ))}
+
+      <StyleSheet />
+    </div>
+  );
+}
+
+const StyleSheet = () => (
+  <style>{`
+    .example {
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+
+      /* hide scrollbar */
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .example::-webkit-scrollbar {
+      display: none;
+    }
+
+    .img-container {
+      height: 100vh;
+      scroll-snap-align: start;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .img-container > div {
+      width: 300px;
+      height: 400px;
+      background: #f5f5f5;
+      overflow: hidden;
+      margin: 20px;
+    }
+
+    .img-container img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .img-container h2 {
+      position: absolute;
+      top: 50%;
+      left: calc(50% + 120px);
+      transform: translateY(-50%);
+      color: #8df0cc;
+      font-family: "Azeret Mono", monospace;
+      font-size: 50px;
+      font-weight: 700;
+      letter-spacing: -3px;
+    }
+  `}</style>
+);

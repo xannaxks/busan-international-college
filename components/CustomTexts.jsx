@@ -10,7 +10,7 @@ export const TypingText = ({ title, textStyles }) => (
     flex flex-wrap 
     items-center justify-center
     font-normal text-[30px] text-secondary-white
-    w-[95%]
+    w-full
     z-50
     ${textStyles}`}
   >

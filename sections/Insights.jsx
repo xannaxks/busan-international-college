@@ -19,7 +19,7 @@ const Insights = () => (
       <TypingText title="| Insight" textStyles="text-center" />
       <TitleText title="Insights about BIC" textStyles="text-center" />
 
-      <div className="mt-[50px] flex flex-col gap-20 sm:gap-20 lg:gap-10">
+      <div className="mt-[50px] flex flex-col gap-20 sm:gap-20 lg:gap-10 z-50">
 
         {insights.map((insight, i) => (
           <InsightCard
