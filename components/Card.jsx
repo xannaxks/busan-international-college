@@ -87,6 +87,7 @@ export default function ExpandableCard({
           text-white
           shadow-[0_0_25px_rgba(255,255,255,0.08)]
           hover:bg-white/10
+          hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]
         "
       >
         {/* Glow */}

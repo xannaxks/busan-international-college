@@ -1,7 +1,7 @@
 'use client';
 
 // eslint-disable-next-line import/no-named-as-default
-import Block from './Block';
+import { Block } from './Block';
 import SpinnerStamp from './SpinnerStamp';
 
 // eslint-disable-next-line react/function-component-definition

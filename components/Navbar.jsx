@@ -96,7 +96,7 @@ const Navbar = () => {
         animate={{ y: menuOpen ? '-100%' : hidden ? '-90%' : '0%' }}
         transition={{ duration: 0.2 }}
         className="
-          fixed top-0 z-50
+          fixed top-0 z-[1000]
           flex
           w-[100vw]
           justify-center
