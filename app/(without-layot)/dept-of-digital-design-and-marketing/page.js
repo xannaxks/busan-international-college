@@ -1,119 +1,43 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { BlockWithImage } from '../../../components/Block';
-import { professors } from '../../../constants';
-import ExpandableCard from '../../../components/Card';
-import { staggerContainer, textVariant } from '../../../utils/motion';
-import styles from '../../../styles';
+import Slides from '../../../components/Slides';
 
 const sections = [
   {
     title: 'Overview',
     content: [
-      'The AI & Engineering Department focuses on the design, development, and implementation of computer systems and their components, with a special emphasis on big data analysis and artificial intelligence (AI). The department offers comprehensive programs that equip students with the knowledge and skills needed to tackle complex engineering challenges in both computer hardware and software, particularly within the realms of big data and AI applications. Emphasizing a practical approach to learning, the department provides students with hands-on experience across various areas of AI & computer engineering',
+      // eslint-disable-next-line max-len
+      'The Department of Digital Design & Marketing (DDM) at Busan International College, Tongmyong University, offers an innovative interdisciplinary program where design, digital technology, and marketing strategy intersect.  The program develops creative thinkers and strategic problem-solvers who understand how visual design, user experience, brand storytelling, and digital marketing operate within today’s global marketplace. Students learn to design user-centered experiences, develop clear and engaging digital brand messages, and apply data-driven insights to solve real branding and marketing challenges. With studio-based learning, industry-linked experiences, and global collaboration opportunities, the DDM program prepares students to lead in the fast-evolving world of digital culture and creative innovation.',
     ],
     image:
-      'https://builtin.com/sites/www.builtin.com/files/2022-04/what-is-deep-learning.png',
+      'https://as2.ftcdn.net/jpg/00/93/65/63/1000_F_93656305_riELCfFvoXEpMb4YwtVTX11ZtB745Ijn.jpg',
   },
   {
     title: 'Field description',
     content: [
-      'AI & Computer Engineering is a multidisciplinary field that combines principles from computer science and electrical engineering. In the AI & Computer Engineering Department, students gain a strong foundation in both hardware and software aspects of computing, with a particular focus on big data analysis and AI. They learn about digital systems, computer architecture, programming languages, algorithms, and data structures, specifically tailored to handling and processing large-scale datasets.Moreover, students delve into advanced topics such as machine learning, data mining, natural language processing, and computer vision. The department places significant emphasis on the integration of big data analytics and AI techniques into various applications and industries. Students acquire the necessary skills to design and develop intelligent systems capable of extracting insights, making predictions, and automating decision-making processes using large volumes of data.',
+      // eslint-disable-next-line max-len
+      'The field of Digital Design & Marketing equips students with the ability to integrate creative design with strategic digital marketing. Students examine how digital platforms, cultural trends, and consumer behaviors influence design decisions, brand identity, and communication across global markets. Through studies in UX/UI, visual communication, digital branding, and consumer insight, students learn to develop design-driven marketing strategies and create meaningful digital experiences. This interdisciplinary foundation enables graduates to bridge creativity and strategic thinking, contributing innovation across diverse digital industries.',
     ],
-    image: '/ai-and-computer-engineering-crimson.svg',
+    image: '/digital-design-and-marketing-crimson.svg',
   },
   {
     title: 'Practical Curriculum',
     content: [
-      'The practical curriculum of the AI & Computer Engineering Department is designed to equip students with hands-on experience and practical skills essential in the field of big data analysis and AI. The coursework includes laboratory sessions, design projects, and internships, enabling students to apply their theoretical knowledge to real-world scenarios within the context of big data and AI applications. Students have access to state-of-the-art tools and technologies integral for big data processing, machine learning, and AI development. They learn to work with distributed computing frameworks and utilize programming languages and libraries commonly employed in data analysis and AI, such as Python, TensorFlow, and PyTorch. The department fosters teamwork and collaboration, with students often working in groups to tackle complex data analysis projects and develop AI models.',
+      // eslint-disable-next-line max-len
+      'The field of Digital Design & Marketing equips students with the ability to integrate creative design with strategic digital marketing. Students examine how digital platforms, cultural trends, and consumer behaviors influence design decisions, brand identity, and communication across global markets. Through studies in UX/UI, visual communication, digital branding, and consumer insight, students learn to develop design-driven marketing strategies and create meaningful digital experiences. This interdisciplinary foundation enables graduates to bridge creativity and strategic thinking, contributing innovation across diverse digital industries.',
     ],
     image:
-      'https://substackcdn.com/image/fetch/f_auto,q_auto:good/https://substack-post-media.s3.amazonaws.com/public/images/4c66f381-6232-4745-933c-82b76ecfb6a2_2250x2952.jpeg',
+      'https://media.licdn.com/dms/image/v2/D5612AQFj7m9opfUEJg/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1670588437305?e=2147483647&v=beta&t=T5NcrmzxtaloYPxgEURhHtuyO-k0Vn1tAJu1utz7Ab8',
   },
 ];
 
-const DeptName = ['Department of AI & Computer Engineering'];
-const DeptBanner = '/ai-and-computer-engineering-banner.png';
+const DeptName = ['Department of Digital Design & Marketing'];
+const DeptBanner = '/digital-design-and-marketing-banner.png';
 const DeptContent = ['scroll down to learn more'];
 
-const Section = ({ title, content, image, direction, main = 0 }) => (
-  <section className="snap-section">
-    <BlockWithImage
-      main={main}
-      header={title}
-      text={content}
-      image={image}
-      direction={direction}
-      // className={'leading-10'}
-    />
-  </section>
-);
-
+// eslint-disable-next-line react/function-component-definition
 export default function Page() {
   return (
-    <div>
-
-      <div className="snap-wrapper">
-        <Section key={-1} title={DeptName} content={DeptContent} image={DeptBanner} direction="left" />
-        {sections.map((section, i) => (
-          <Section
-            key={i}
-            {...section}
-            direction={
-              i % 2 === 0
-                ? 'right'
-                : 'left'
-            }
-
-          />
-        ))}
-
-        <style>{`
-          .snap-wrapper {
-            height: 100vh;
-            width: 100vw;
-            overflow-y: scroll;
-            scroll-snap-type: y mandatory;
-            scrollbar-width: none;
-          }
-  
-          .snap-wrapper::-webkit-scrollbar {
-            display: none;
-          }
-  
-          .snap-section {
-            height: 100vh;
-            scroll-snap-align: start;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-  
-            padding: 2rem;
-          }
-        `}
-        </style>
-      </div>
-      <div className="flex justify-center items-center gap-16 flex-col lg:flex-row z-50">
-        {professors.map((item, i) => (
-          <ExpandableCard
-            key={i}
-            {...item}
-          />
-        ))}
-        {professors.map((item, i) => (
-          <ExpandableCard
-            key={i}
-            {...item}
-          />
-        ))}
-        {professors.map((item, i) => (
-          <ExpandableCard
-            key={i}
-            {...item}
-          />
-        ))}
-      </div>
-    </div>
+    <Slides DeptName={DeptName} DeptBanner={DeptBanner} DeptContent={DeptContent} sections={sections} />
   );
 }
