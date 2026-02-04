@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import styles from '../styles';
 import { slideIn, staggerContainer, textVariant } from '../utils/motion';
 
-const Hero = () => (
+const Hero = ({ text1 = '', text2 = '', text3 = '', imageSrc = '' }) => (
   <section className={`${styles.yPaddings} sm:pl-16 pl-6 `}>
     <motion.div
       variants={staggerContainer}
@@ -18,16 +18,16 @@ const Hero = () => (
           variants={textVariant(1.1)}
           className={styles.heroHeading}
         >
-          Busan
+          {text1 || 'Busan'}
         </motion.h1>
         <motion.div
           variants={textVariant(1.2)}
           className="flex flex-row items-center justify-center"
         >
-          <h1 className={styles.heroHeading}> International</h1>
+          <h1 className={styles.heroHeading}> {text2 || 'International'} </h1>
         </motion.div>
         <motion.div variants={textVariant(1.3)} classname="flex flex-row items items-center justify-center">
-          <h1 className={styles.heroHeading}> College</h1>
+          <h1 className={styles.heroHeading}> {text3 || 'College'} </h1>
         </motion.div>
       </div>
 
@@ -37,7 +37,7 @@ const Hero = () => (
       >
         <div className="absolute w-full h-[300px] hero-gradient rounded-tl-[140px] z-[0] sm:-top-[20px] -top-[10px]" />
         <img
-          src="/image1.jpg"
+          src={imageSrc || '/image1.jpg'}
           alt="cover"
           className="w-full sm:h-[500px] h-[350px] object-cover rounded-tl-[140px] z-10 relative"
         />

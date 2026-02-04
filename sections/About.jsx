@@ -5,7 +5,7 @@ import { TypingText } from '../components';
 import styles from '../styles';
 import { fadeIn, staggerContainer } from '../utils/motion';
 
-const About = () => (
+const About = ({ text = '', header = '' }) => (
   <section className={`${styles.paddings} relative z-10`}>
     <div className="gradient-02 z-0" />
 
@@ -17,18 +17,30 @@ const About = () => (
       className={`${styles.innerWidth} mx-auto ${styles.flexCenter} flex-col`}
     >
       <TypingText
-        title="| About Busan International College"
-        textStyles="text-center"
+        title={header || '| About Busan International College'}
+        textStyles="text-center text-secondary-white"
       />
 
       <motion.p
         variants={fadeIn('up', 'tween', 0.2, 1)}
-        className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-secondary-white"
+        className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-white"
       >
-        <span className="font-extrabold">
-          BIC&nbsp;
-        </span>
-          at Tongmyong University (TU) is a <span className="font-extrabold">globally focused</span> college within a larger Korean university, <span className="font-extrabold">aiming to develop world-class innovators</span> in tech, management, and content through action-based learning, English-taught programs, and <span className="font-extrabold">industry partnerships with giants like Amazon and Samsung.</span> BIC offers degrees in areas like AI, Engineering, Global Business, and Digital Content, fostering a multicultural environment with practical skills and career support for students seeking to thrive globally.
+        { text || (
+          <>
+            <span className="font-extrabold">BIC&nbsp;</span>
+            at Tongmyong University (TU) is a{' '}
+            <span className="font-extrabold">globally focused</span> college within a larger Korean university,{' '}
+            <span className="font-extrabold">
+              aiming to develop world-class innovators
+            </span>{' '}
+            in tech, management, and content through action-based learning, English-taught programs, and{' '}
+            <span className="font-extrabold">
+              industry partnerships with giants like Amazon and Samsung.
+            </span>{' '}
+            BIC offers degrees in areas like AI, Engineering, Global Business, and Digital Content, fostering a multicultural environment with practical skills and career support for students seeking to thrive globally.
+          </>
+        )}
+
       </motion.p>
 
       <motion.img

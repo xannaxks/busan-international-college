@@ -19,7 +19,7 @@ export default function Rotating3DCarousel({ images }) {
   const step = 360 / total;
 
   return (
-    <section className="min-h-screen w-full text-[#ececec] flex items-center justify-center overflow-hidden [perspective:1500px]">
+    <section className="h-[50vh] md:min-h-screen w-full text-[#ececec] flex items-center justify-center overflow-hidden [perspective:1500px]">
       {/* container */}
       <div className="relative aspect-square w-[220px] sm:w-[280px] md:w-[340px] lg:w-[420px] [transform-style:preserve-3d] translate-z-[-800px]">
         {/* inner (rotating) */}

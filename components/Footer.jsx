@@ -8,10 +8,10 @@ import InfiniteBanner from './Banner';
 
 const Footer = () => (
   <div>
-    <div className={'my-24'}>
-      <InfiniteBanner to={'left'} />
-      <InfiniteBanner to={'right'} />
-    </div>
+    {/*<div className={'my-24'}>*/}
+    {/*  <InfiniteBanner to={'left'} />*/}
+    {/*  <InfiniteBanner to={'right'} />*/}
+    {/*</div>*/}
     <motion.footer
       variants={footerVariants}
       initial="hidden"
