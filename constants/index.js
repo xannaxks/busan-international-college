@@ -78,18 +78,21 @@ export const newFeatures = [
 export const insights = [
   {
     imgUrl: '/insight-1.png',
+    url: '/bic-news/1',
     title: 'Fall 2024 Student Welcoming Ceremony',
     subtitle:
         'We are excited to welcome all new and returning students to the Fall 2024 semester!',
   },
   {
     imgUrl: '/insight-2.jpeg',
+    url: '/bic-news/2',
     title: 'Launching a Career Mentoring Program',
     subtitle:
         'The Tongmyong University International Student Support Office is launching a Career Mentoring Program!',
   },
   {
     imgUrl: '/insight-3.jpeg',
+    url: '/bic-news/3',
     title: 'Tongmyong University Ranks 34th in Leadership at WURI 2024',
     subtitle:
         'Tongmyong University has achieved an impressive milestone on June7th, 2024 by being ranked 34th in the Leadership category!',

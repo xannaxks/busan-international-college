@@ -1,12 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './app/**/*.{js,jsx,ts,tsx}',
-    './pages/**/*.{js,jsx,ts,tsx}',
+    './app/**/*.{js,jsx,ts,tsx,md,mdx}',
+    './pages/**/*.{js,jsx,ts,tsx,md,mdx}',
     './components/**/*.{js,jsx,ts,tsx}',
     './sections/**/*.{js,jsx,ts,tsx}',
-    './styles/*.{js,jsx,ts,tsx}',
+    './styles/**/*.{js,jsx,ts,tsx}',
   ],
+
   theme: {
     extend: {
       colors: {
@@ -53,5 +54,8 @@ module.exports = {
       },
     },
   },
-  plugins: [],
-};
+
+  plugins: [
+    require('@tailwindcss/typography'), // ✅ ONLY here
+  ],
+}

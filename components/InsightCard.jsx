@@ -3,10 +3,13 @@
 import { motion } from 'framer-motion';
 import { fadeIn } from '../utils/motion';
 
-const InsightCard = ({ index, imgUrl, title, subtitle }) => (
+const InsightCard = ({ index, imgUrl, title, subtitle, url }) => (
   <motion.div
     variants={fadeIn('up', 'spring', index * 0.5, 1)}
-    className="flex md:flex-row flex-col gap-5"
+    className="flex md:flex-row flex-col gap-5
+          hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] rounded-2xl p-5
+
+          shadow-[0_0_25px_rgba(255,255,255,0.08)]"
   >
     <img src={imgUrl} alt={title} className="md:w-[270px] w-full h-[250px] rounded-[32px] object-cover" />
     <div className="w-full flex justify-between items-center">
