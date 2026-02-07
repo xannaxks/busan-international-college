@@ -21,8 +21,14 @@ const NAV_SECTIONS_LEFT = [
     title: 'Academics',
     links: [
       { href: '/education-at-bic', label: 'Education at BIC' },
-      { href: '/billing', label: 'Faculty' },
-      { href: '/security', label: 'Undergraduate Programs' },
+      { href: '/faculty', label: 'Faculty' },
+      { href: '/dept-of-ai-and-computer-engineering', label: 'AI & Computer Engineering' },
+      { href: '/dept-of-global-korean-studies', label: 'Global Korean Studies' },
+      { href: '/dept-of-global-business', label: 'Global Business' },
+      { href: '/dept-of-digital-design-and-marketing', label: 'Digital Design and Marketing' },
+      { href: '/dept-of-mechanical-and-automotive-engineering', label: 'Mechanical and Automotive Engineering' },
+      { href: '/dept-of-tech-management-and-innovation', label: 'Tech Management and Innovation' },
+      { href: '/dept-of-information-system-and-security', label: 'Information System and Security' },
     ],
   },
 ];

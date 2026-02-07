@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import styles from '../styles';
 import { newFeatures } from '../constants';
 import { NewFeatures, TitleText, TypingText } from '../components';
-import { planetVariants, staggerContainer, fadeIn } from '../utils/motion';
+import { planetVariants, planetAppear, staggerContainer, fadeIn } from '../utils/motion';
 
 const WhatsNew = () => (
   <section className={`${styles.paddings} relative z-10`}>
@@ -23,13 +23,17 @@ const WhatsNew = () => (
         <TypingText title="| Campus Life" />
         <TitleText title={<>Learn about our campus life</>} />
         <div className="mt-[48px] flex flex-wrap justify-between gap-[24px]">
-          <NewFeatures imgUrl="/global-campus-white.svg" title="Global campus" subtitle="Study in Korea within a diverse international community." />
-          <NewFeatures imgUrl="/international-community-white.svg" title="International Life" subtitle="A global environment at the heart of East Asia."/>
+          <a href="/visit-bic">
+            <NewFeatures imgUrl="/global-campus-white.svg" title="Global campus" subtitle="Study in Korea within a diverse international community." />
+          </a>
+          <a href="/student-life">
+            <NewFeatures imgUrl="/international-community-white.svg" title="International Life" subtitle="A global environment at the heart of East Asia."/>
+          </a>
         </div>
       </motion.div>
 
       <motion.div
-        variants={planetVariants('right')}
+        variants={planetAppear()}
         className={`flex-1 ${styles.flexCenter}`}
       >
         <img

@@ -73,7 +73,7 @@ const Page = () => (
     <div>
       <TwoBlocks text1={text1} text2={text2} header1="Academic Partners" header2="Industry Partners" />
     </div>
-    <div className="mt-20">
+    <div className="mt-20 relative z-[150]">
       <Globe />
     </div>
   </section>

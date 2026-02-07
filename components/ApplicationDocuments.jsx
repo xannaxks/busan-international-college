@@ -1,5 +1,5 @@
 const ApplicationDocuments = () => (
-  <table className="min-w-full border-collapse border border-gray-600 text-left text-gray-200">
+  <table className="overflow-auto min-w-full border-collapse border border-black text-left text-gray-200 relative z-[150]">
     <caption className="text-lg font-semibold mb-4 text-gray-100">
       Consist of Essential, Nationality, Language, Educational Background, Financial
     </caption>
@@ -12,56 +12,56 @@ const ApplicationDocuments = () => (
 
     <thead className="bg-[#fff4e6]">
       <tr>
-        <th scope="col" className="border border-gray-600 px-4 py-2 text-gray-600">Section</th>
-        <th colSpan="2" scope="col" className="border border-gray-600 px-4 py-2 text-gray-600">Documents</th>
+        <th scope="col" className="border border-black px-4 py-2 text-gray-600">Section</th>
+        <th colSpan="2" scope="col" className="border border-black px-4 py-2 text-gray-600">Documents</th>
       </tr>
     </thead>
 
     <tbody className="divide-y divide-gray-600">
       <tr>
-        <th rowSpan="4" className="border border-gray-600 px-4 py-2 font-medium text-gray-100">1. Essential</th>
-        <td colSpan="2" className="border border-gray-600 px-4 py-2">
+        <th rowSpan="4" className="border border-black px-4 py-2 font-medium text-gray-100">1. Essential</th>
+        <td colSpan="2" className="border border-black px-4 py-2">
           <span className="font-semibold">[1-1]</span>
           <div>Application form (including personal statement)</div>
         </td>
       </tr>
       <tr>
-        <td colSpan="2" className="border border-gray-600 px-4 py-2">
+        <td colSpan="2" className="border border-black px-4 py-2">
           <span className="font-semibold">[1-2]</span>
           <div>Copy of passport</div>
         </td>
       </tr>
       <tr>
-        <td colSpan="2" className="border border-gray-600 px-4 py-2">
+        <td colSpan="2" className="border border-black px-4 py-2">
           <span className="font-semibold">[1-3]</span>
           <div>3 copies of color photographs (passport photo: 3.5cmx4.5cm/white background)</div>
         </td>
       </tr>
       <tr>
-        <td colSpan="2" className="border border-gray-600 px-4 py-2">
+        <td colSpan="2" className="border border-black px-4 py-2">
           <span className="font-semibold">[1-4]</span>
           <div>Copy of ROK Alien Registration Card (for registered domestic residents)</div>
         </td>
       </tr>
 
       <tr>
-        <th rowSpan="2" className="border border-gray-600 px-4 py-2 font-medium text-gray-100">2. Nationality
+        <th rowSpan="2" className="border border-black px-4 py-2 font-medium text-gray-100">2. Nationality
         </th>
-        <td colSpan="2" className="border border-gray-600 px-4 py-2">
+        <td colSpan="2" className="border border-black px-4 py-2">
           <span className="font-semibold">[2-1]</span>
           <div>Copy of Parents' ID cards (or passports) (notarized in English if not in English)</div>
         </td>
       </tr>
       <tr>
-        <td colSpan="2" className="border border-gray-600 px-4 py-2">
+        <td colSpan="2" className="border border-black px-4 py-2">
           <span className="font-semibold">[2-2]</span>
           <div>Family Relations Certificate with parents (notarized in English if not in English)</div>
         </td>
       </tr>
 
       <tr>
-        <th className="border border-gray-600 px-4 py-2 font-medium text-gray-100">3. Language</th>
-        <td colSpan="2" className="border border-gray-600 px-4 py-2">
+        <th className="border border-black px-4 py-2 font-medium text-gray-100">3. Language</th>
+        <td colSpan="2" className="border border-black px-4 py-2">
           <span className="font-semibold">[3-1]</span>
           <div>
             Language test results (TOPIK, IELTS, TOEFL, TEPS)<br />
@@ -71,25 +71,25 @@ const ApplicationDocuments = () => (
       </tr>
 
       <tr>
-        <th rowSpan="5" className="border border-gray-600 px-4 py-2 font-medium text-gray-100">4. Educational
+        <th rowSpan="5" className="border border-black px-4 py-2 font-medium text-gray-100">4. Educational
           Background
         </th>
-        <td colSpan="2" className="border border-gray-600 px-4 py-2">
+        <td colSpan="2" className="border border-black px-4 py-2">
           <span className="font-semibold">[4-1]</span>
           <div>High school Transcript (notarized in English if not in English)</div>
         </td>
       </tr>
       <tr>
-        <td colSpan="2" className="border border-gray-600 px-4 py-2">
+        <td colSpan="2" className="border border-black px-4 py-2">
           <span className="font-semibold">[4-2]</span>
           <div>Certificate of High school Graduation (notarized for Academic Certification*)</div>
         </td>
       </tr>
       <tr>
-        <td className="border border-gray-600 px-4 py-2 text-gray-200">Additional Documents needed for Transfer
+        <td className="border border-black px-4 py-2 text-gray-200">Additional Documents needed for Transfer
           Applicants
         </td>
-        <td className="border border-gray-600 px-4 py-2">
+        <td className="border border-black px-4 py-2">
           <span className="font-semibold">[4-3]</span>
           <div>Certificate of Graduation from College or Completion from University<br />(notarized for
             Academic Certification*)
@@ -97,14 +97,14 @@ const ApplicationDocuments = () => (
         </td>
       </tr>
       <tr>
-        <td className="border border-gray-600 px-4 py-2" />
-        <td className="border border-gray-600 px-4 py-2">
+        <td className="border border-black px-4 py-2" />
+        <td className="border border-black px-4 py-2">
           <span className="font-semibold">[4-4]</span>
           <div>Transcript of College or University Transcript (notarized in English if not in English)</div>
         </td>
       </tr>
       <tr>
-        <td colSpan="2" className="border border-gray-600 px-4 py-2 text-gray-200">
+        <td colSpan="2" className="border border-black px-4 py-2 text-gray-200">
           * Academic certification documents must be notarized according to one of the following options (Only
           acceptable for schools in China)
           <ol className="list-decimal pl-5">
@@ -137,8 +137,8 @@ const ApplicationDocuments = () => (
       </tr>
 
       <tr>
-        <th rowSpan="3" className="border border-gray-600 px-4 py-2 font-medium text-gray-100">5. Financial</th>
-        <td colSpan="2" className="border border-gray-600 px-4 py-2">
+        <th rowSpan="3" className="border border-black px-4 py-2 font-medium text-gray-100">5. Financial</th>
+        <td colSpan="2" className="border border-black px-4 py-2">
           <span className="font-semibold">[5-1]</span>
           <div>
             Certificate of Bank Balance Copy<br />(Submitted separately; submission schedule will be notified
@@ -166,7 +166,7 @@ const ApplicationDocuments = () => (
         </td>
       </tr>
       <tr>
-        <td colSpan="2" className="border border-gray-600 px-4 py-2">
+        <td colSpan="2" className="border border-black px-4 py-2">
           Additional documents for overseas residents<br />
           <span className="font-semibold">[5-2]</span>
           <div>Proof of Employment or Certificate of Career of Applicant or Financial Guarantor**<br />(Company
@@ -179,7 +179,7 @@ const ApplicationDocuments = () => (
         </td>
       </tr>
       <tr>
-        <td colSpan="2" className="border border-gray-600 px-4 py-2">
+        <td colSpan="2" className="border border-black px-4 py-2">
           **Financial guarantor: Only parents of applicants are acceptable.
         </td>
       </tr>

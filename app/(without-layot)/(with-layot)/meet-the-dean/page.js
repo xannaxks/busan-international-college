@@ -78,6 +78,19 @@ const Page = () => (
           />
         </motion.div>
       </motion.div>
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
+        className={`${styles.innerWidth} mx-auto ${styles.flexCenter} flex-col`}
+      >
+        <motion.div
+          variants={textVariant(3)}
+        >
+          This is the Dean
+        </motion.div>
+      </motion.div>
     </section>
   </section>
 );
