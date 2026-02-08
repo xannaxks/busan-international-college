@@ -25,9 +25,11 @@
     "lucide-react": "^0.562.0",
     "motion": "^12.27.0",
     "next": "^16.1.3",
+    "pdfjs-dist": "^5.4.624",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-icons": "^5.5.0",
+    "react-pdf": "^10.3.0",
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
