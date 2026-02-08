@@ -53,7 +53,7 @@ const NAV_SECTIONS_RIGHT = [
   {
     title: 'News & Events',
     links: [
-      { href: '/notice', label: 'Notice' },
+      { href: '/notices', label: 'Notices' },
       { href: '/faqs', label: 'FAQs' },
       { href: '/bic-news', label: 'BIC News' },
       { href: '/bic-events', label: 'BIC Events' },
