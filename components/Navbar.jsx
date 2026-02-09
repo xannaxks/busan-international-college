@@ -183,7 +183,7 @@ const Navbar = () => {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ duration: 0.3, ease: 'easeOut' }}
-              className="fixed top-0 right-0 z-50 h-full w-[80%] bg-white p-8 overflow-y-auto"
+              className="fixed top-0 right-0 z-[1000] h-full w-[80%] bg-white p-8 overflow-y-auto"
             >
               {/* Close button */}
               {/* eslint-disable-next-line react/button-has-type */}
