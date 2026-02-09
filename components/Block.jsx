@@ -73,9 +73,10 @@ export const BlockWithImage = ({
       viewport={{ once: false, amount: 0.4 }}
       className={`
         w-full max-w-6xl
-        max-h-[75vh] lg:max-h-[90vh]
-        lg:mt-16
-        overflow-y-auto
+        max-h-none lg:max-h-[90vh]
+overflow-visible lg:overflow-y-auto
+
+        
         rounded-2xl
         border border-white/40
         bg-neutral-950
@@ -85,6 +86,7 @@ export const BlockWithImage = ({
         shadow-xl
         section-gradient-purple-red
         hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]
+        
         ${className}
       `}
     >
@@ -123,11 +125,16 @@ export const BlockWithImage = ({
             ${isRight ? 'lg:text-right' : 'lg:text-left'}
           `}
         >
-          <h3 className={`
-            mb-6
-            text-4xl md:text-5xl font-semibold text-gray-300
-            ${main ? 'leading-10' : 'leading-3'}
-           `}
+          <h3
+            className={`
+              mb-6 font-semibold text-gray-200
+              text-[clamp(2rem,6.5vw,3.25rem)]
+              leading-[1.08] sm:leading-[1.05]
+              tracking-tight
+              [text-wrap:balance]
+              break-words
+              ${isRight ? 'lg:text-right' : 'lg:text-left'}
+            `}
           >
             {header}
           </h3>
